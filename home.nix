@@ -25,11 +25,10 @@
     #./home/programs/kanata #TODO: fix the user group permissions
   ];
 
-  home.file = {};
-
+  home.file = { };
 
   programs.home-manager.enable = true;
-  
+
   # Git
   programs.gh.enable = true;
 

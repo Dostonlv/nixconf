@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     gh
     lf
@@ -11,7 +12,6 @@
     vlc
     zip
     btop
-    fish
     gimp
     nixd
     tree
@@ -28,10 +28,13 @@
     spotify
     alejandra
     yandex-music
+    ghostty
+    apache-directory-studio
   ];
 
- imports = [
-   ./programs/firefox
-   ./programs/vscode
-];
+  imports = [
+    ./programs/firefox
+    ./programs/vscode
+    ./programs/starship
+  ];
 }

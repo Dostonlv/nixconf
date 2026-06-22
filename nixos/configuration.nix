@@ -9,11 +9,12 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
-    ../modules/packages.nix #INFO: environment & user packages
+    ../modules/packages.nix # INFO: environment & user packages
     ./parts/audio.nix
     ./parts/game.nix
     ./parts/pkt.nix
@@ -25,7 +26,7 @@
   );
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
     users = {
       kisuke = import ../home.nix;
@@ -38,16 +39,21 @@
     };
   };
 
-
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kisuke";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.networkmanager.enable = true;
+
+  networking.hosts = {
+    "91.212.89.25" = [ "git.oss.uzinfocom.uz" ];
+  };
 
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -71,8 +77,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -81,9 +85,12 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-
   programs.firefox.enable = true;
-  programs.fish.enable = true;
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
