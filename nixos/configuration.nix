@@ -90,6 +90,15 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "history"
+        "rust"
+      ];
+    };
   };
 
   nixpkgs.config.allowUnfree = true;

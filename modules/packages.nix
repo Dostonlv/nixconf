@@ -20,6 +20,9 @@
     font-alias
     nixpkgs-fmt
     rust-analyzer
+    # rust
+    rustc
+    starship
   ];
 
   users.users.kisuke = {

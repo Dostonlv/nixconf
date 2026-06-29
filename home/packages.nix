@@ -30,11 +30,13 @@
     yandex-music
     ghostty
     apache-directory-studio
+    # starship
+    postman
   ];
 
   imports = [
     ./programs/firefox
     ./programs/vscode
-    ./programs/starship
+    # ./programs/starship
   ];
 }

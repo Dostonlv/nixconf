@@ -33,6 +33,11 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -72,7 +77,10 @@
       overlays = import ./overlays/default.nix;
       pkgsWithOverlays = import pkgs {
         inherit system;
-        overlays = [ overlays ];
+        overlays = [
+          overlays
+
+        ];
         config.allowUnfree = true;
       };
     in
