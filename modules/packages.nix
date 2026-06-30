@@ -23,6 +23,9 @@
     # rust
     rustc
     starship
+    dotnet-sdk_10
+    csharp-ls
+    omnisharp-roslyn
   ];
 
   users.users.kisuke = {

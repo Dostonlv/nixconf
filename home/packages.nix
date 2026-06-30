@@ -30,13 +30,17 @@
     yandex-music
     ghostty
     apache-directory-studio
-    # starship
     postman
+    wl-clipboard
+    cliphist
+    wl-clip-persist
   ];
 
   imports = [
     ./programs/firefox
     ./programs/vscode
-    # ./programs/starship
+    ./programs/dconf
+    ./programs/vicinae
+    ./programs/gnomeshell
   ];
 }

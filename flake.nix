@@ -38,6 +38,9 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # vicinae.url = "github:vicinaehq/vicinae";
+
   };
 
   outputs =
@@ -96,6 +99,8 @@
           inherit self inputs pkgsWithOverlays;
         };
       };
+
+      formatter.${system} = pkgs.nixfmt;
 
       home.packages = with pkgs; [
         tex
