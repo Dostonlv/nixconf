@@ -101,8 +101,15 @@
         "rust"
       ];
     };
+    shellAliases = {
+      reload = "sudo nixos-rebuild switch --flake ";
+      garbage = "sudo nix-collect-garbage --delete-old";
+      nihh = "code ~/nix";
+      dev = "cd ~/Developer";
+    };
   };
 
+  services.tailscale.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   # programs.mtr.enable = true;

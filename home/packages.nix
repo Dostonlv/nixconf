@@ -34,6 +34,7 @@
     wl-clipboard
     cliphist
     wl-clip-persist
+    jetbrains.datagrip
   ];
 
   imports = [
