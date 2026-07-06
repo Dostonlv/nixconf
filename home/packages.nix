@@ -30,10 +30,11 @@
     yandex-music
     ghostty
     apache-directory-studio
-    postman
     wl-clipboard
     cliphist
     wl-clip-persist
+    jetbrains.datagrip
+    bruno
   ];
 
   imports = [
