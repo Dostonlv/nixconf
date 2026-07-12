@@ -6,6 +6,8 @@
 
     extensions = [
       { package = pkgs.gnomeExtensions.vicinae; }
+      { package = pkgs.gnomeExtensions.blur-my-shell; }
+      { package = pkgs.gnomeExtensions.gnome-wallpaper-engine; }
     ];
   };
 }

@@ -26,6 +26,7 @@
   );
 
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
     users = {
@@ -110,7 +111,6 @@
   };
 
   services.tailscale.enable = true;
-  nixpkgs.config.allowUnfree = true;
 
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {

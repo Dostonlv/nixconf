@@ -35,6 +35,8 @@
     wl-clip-persist
     jetbrains.datagrip
     bruno
+    ffmpeg
+    mpv
   ];
 
   imports = [

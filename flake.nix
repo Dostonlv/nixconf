@@ -77,13 +77,9 @@
       };
 
       # Overlays
-      overlays = import ./overlays/default.nix;
-      pkgsWithOverlays = import pkgs {
-        inherit system;
-        overlays = [
-          overlays
-
-        ];
+      overlays = import ./overlays/default.nix { inherit inputs;};
+      pkgsWithOverlays = import nixpkgs {
+        inherit system overlays;
         config.allowUnfree = true;
       };
     in
@@ -94,26 +90,17 @@
           ./nixos/configuration.nix
           ./nixos/hardware-configuration.nix
         ];
+        pkgs = pkgsWithOverlays;
 
         specialArgs = {
-          inherit self inputs pkgsWithOverlays;
+          inherit self inputs;
         };
       };
 
-      formatter.${system} = pkgs.nixfmt;
+      formatter.${system} = pkgs.alejandra;
 
       home.packages = with pkgs; [
         tex
       ];
-
-      # Home manager
-      homeConfigurations.kisuke = home-manager.lib.homeManagerConfiguration {
-        inherit system;
-        username = "kisuke";
-        homeDirectory = "/home/kisuke";
-        configuration = ./home.nix;
-
-        pkgs = pkgsWithOverlays;
-      };
     };
 }
