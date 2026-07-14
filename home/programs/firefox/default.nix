@@ -1,4 +1,5 @@
 { pkgs, inputs, ... }: {
+  # TODO: refactor the file      ISSUE: accounts-daemon.service taking too long to rebuild the system
   programs.firefox = {
     enable = true;
     # package = pkgs.floorp-bin;

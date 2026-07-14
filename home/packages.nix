@@ -4,39 +4,9 @@
 }:
 {
   home.packages = with pkgs; [
-    gh
-    lf
-    bat
-    dig
-    vim
-    vlc
-    zip
-    btop
-    gimp
-    nixd
-    tree
-    wget
-    cargo
-    exfat
-    unzip
-    clippy
-    direnv
-    gnutls
-    lolcat
-    netcat
-    openssl
-    spotify
-    alejandra
-    yandex-music
     ghostty
-    apache-directory-studio
     wl-clipboard
-    cliphist
     wl-clip-persist
-    jetbrains.datagrip
-    bruno
-    ffmpeg
-    mpv
   ];
 
   imports = [

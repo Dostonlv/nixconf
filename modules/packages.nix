@@ -1,8 +1,14 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    lf
+    zip
     git
     bat
     vim
+    mpv
+    dig
+    nixd
+    wget
     meow
     htop
     tree
@@ -11,15 +17,34 @@
     nixd
     wget
     zeek
+    bruno
     kitty
+    unzip
+    exfat
+    cargo
+    clippy
+    lolcat
+    netcat
+    gnutls
+    direnv
+    ffmpeg
+    spotify
     lazygit
+    openssl
+    cliphist
     obsidian
     keycloak
+    alejandra
     alejandra
     zed-editor
     font-alias
     nixpkgs-fmt
+    yandex-music
     rust-analyzer
+    jetbrains.datagrip
+    apache-directory-studio
+
+    wpsoffice
     # rust
     rustc
     starship
